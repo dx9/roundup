@@ -1,0 +1,18 @@
+version: '2'
+services:
+  http:
+    image: nginx:stable-alpine
+    ports:
+     - "9090:80"
+    volumes:
+     - ./boot:/usr/share/nginx/html:ro
+    depends_on:
+     - pxe
+  pxe:
+    build: ./pxe
+    cap_add:
+      - NET_ADMIN
+    environment:
+      DEV: ${DEV}
+      MODE: ${MODE}
+    network_mode: "host"

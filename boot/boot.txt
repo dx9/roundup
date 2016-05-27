@@ -1,0 +1,2 @@
+#!ipxe
+chain http://${next-server}:9090/hosts/${serial}-${uuid}/boot.txt

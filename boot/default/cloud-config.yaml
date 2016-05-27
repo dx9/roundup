@@ -1,0 +1,6 @@
+#cloud-config
+rancher:
+  network:
+    interfaces:
+      eth0:
+        dhcp: true
